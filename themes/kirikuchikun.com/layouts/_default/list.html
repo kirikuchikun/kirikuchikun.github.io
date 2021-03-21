@@ -1,9 +1,26 @@
 {{ define "main" }}
-    <h1>{{.Title}}</h1>
-    {{ range .Pages.ByDate.Reverse }}
+    {{ $paginator := "" }}
+    {{if .IsHome}}
+        {{ $paginator = .Paginate .Site.RegularPages.ByDate.Reverse }}
+    {{else}}
+        <h1>{{.Title}}</h1>
+        {{ $paginator = .Paginate .Pages.ByDate.Reverse }}
+    {{end}}
+    {{ range $paginator.Pages }}
         <article>
             <time>{{ .Date.Format "2006.01.02" }}</time>
             <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
         </article>
+    {{ end }}
+    {{ if gt .Paginator.TotalPages 1 }}
+    <nav>
+        {{ with .Paginator.Prev }}
+            <a href="{{ .URL }}"><<</a>
+        {{ end }}
+        <span>{{.Paginator.PageNumber}}/ {{ .Paginator.TotalPages }}</span>
+        {{ with .Paginator.Next }}
+            <a href="{{ .URL }}"> >></a>
+        {{ end }}
+    </nav>
     {{ end }}
 {{ end }}

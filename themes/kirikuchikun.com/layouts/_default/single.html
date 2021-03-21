@@ -1,0 +1,26 @@
+{{ define "main" }}
+	<article>
+		<h1>{{ .Title }}</h1>
+		{{ $date := .Date.Format "2006.01.02" }}
+		{{with .Lastmod}}
+			{{ $lastmod := .Format "2006.01.02" }}
+			{{if gt $lastmod $date}}
+				{{ $date = $lastmod }}
+			{{end}}
+		{{end}}
+		<time>{{ $date }}</time>
+		{{ .Content }}
+	</article>
+	<nav>
+		{{ if .PrevInSection }}
+			<a class="prev-post" href="{{ .PrevInSection.Permalink }}">
+				{{- .PrevInSection.Title -}}
+			</a>
+		{{ end }}
+		{{ if .NextInSection }}
+			<a class="next-post" href="{{ .NextInSection.Permalink }}">
+				{{- .NextInSection.Title -}}
+			</a>
+		{{ end }}
+	</nav>
+{{ end }}

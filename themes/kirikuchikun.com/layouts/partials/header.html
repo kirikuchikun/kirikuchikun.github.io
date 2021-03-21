@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+<meta charset="utf-8">
+<title>{{if not .IsHome}}{{ .Title }} | {{end}}{{ $.Site.Title }}</title>
+<meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css" />
+<link rel="shortcut icon" href="">
+</head>
+<body class="{{if .IsHome}}home{{else}}{{if .IsPage}}single{{else if .IsSection}}archive{{end}}{{end}}">
+<header>
+    {{if .IsHome}}
+        <h1 class="logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+    {{else}}
+        <p class="logo"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
+    {{end}}
+</header>

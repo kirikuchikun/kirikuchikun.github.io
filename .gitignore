@@ -1,0 +1,8 @@
+.DS_Store
+config.toml
+/archetypes
+/content
+/data
+/layouts
+/resources
+/static

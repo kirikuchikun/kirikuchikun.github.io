@@ -1,0 +1,22 @@
+{{ define "main" }}
+    <div class="articles h-feed">
+        {{ $paginator := .Paginate .Site.RegularPages }}
+        {{ range $paginator.Pages }}
+            <article>
+                <time>{{ .Date.Format "2006.01.02" }}</time>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </article>
+        {{ end }}
+    </div>
+    {{ if gt .Paginator.TotalPages 1 }}
+        <nav>
+            {{ with .Paginator.Prev }}
+                <a href="{{ .URL }}"><<</a>
+            {{ end }}
+            <span>{{.Paginator.PageNumber}}/ {{ .Paginator.TotalPages }}</span>
+            {{ with .Paginator.Next }}
+                <a href="{{ .URL }}"> >></a>
+            {{ end }}
+        </nav>
+    {{ end }}
+{{ end }}

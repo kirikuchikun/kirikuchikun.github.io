@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Live here</title>
-    <link>https://www.kirikuchikun.com/post/</link>
+    <link>https://www.kirikuchikun.com/posts/</link>
     <description>Recent content in Posts on Live here</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.kirikuchikun.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.kirikuchikun.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Firstpost</title>
       <link>https://www.kirikuchikun.com/post/firstpost/</link>

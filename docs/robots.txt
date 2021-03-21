@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /categories/
+Disallow: /tags/
+Disallow: /posts/
+Sitemap: https://www.kirikuchikun.com/sitemap.xml
